@@ -9,8 +9,8 @@ import imgHealthy from '../src/assets/healthy.png';*/
 function App() {
 
   //state
-  const [weight, setWeight] = useState(0)
-  const [height, setHeight] = useState(0)
+  const [weight, setWeight] = useState(null)
+  const [height, setHeight] = useState(null)
   const [bmi, setBmi] = useState('')
   const [message, setMessage] = useState('')
 
@@ -23,7 +23,7 @@ function App() {
     if (weight === 0 || height === 0) {
       alert('Insira um peso e altura válidos, por favor')
     } else {
-      let bmi = (weight/(height * height)* 703)
+      let bmi = (weight/(height * height))
       setBmi(bmi.toFixed(1))
       //login for message
       if (bmi < 25){
